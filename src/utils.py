@@ -3,6 +3,7 @@ import polars as pl
 from pathlib import Path
 import timeit
 import json
+from typing import Union
 
 def read_df_pl(df_path: Path):
     return pl.read_csv(df_path)
@@ -13,20 +14,52 @@ def read_df_pd(df_path: Path):
 def read_df_pl_to_pd(df_path: Path):
     return pl.read_csv(df_path).to_pandas()
 
+def get_base_paths(dataset_path: Path, ds_name: str):
+    """Given the dataset path and the dataset name, generate the required paths
+    assuming the D3M directory tree structure. 
 
-def find_unique_keys_pandas(df: pd.DataFrame, key_cols):
-    return df[key_cols].groupby(key_cols).size()
-def find_unique_keys_polars(df: pl.DataFrame, key_cols):
-    return df.select(pl.col(key_cols)).groupby(key_cols).count()
-def find_unique_keys_polars_lazy(df: pl.LazyFrame, key_cols):
-    return df.select(pl.col(key_cols)).groupby(key_cols).count().collect()
+    Args:
+        dataset_path (Path): Path to the dataset.
+        ds_name (str): Name of the dataset.
+
+    Returns:
+        (Path, Path, Path): tuple of paths.
+    """
+    seed_path = Path(dataset_path, f"{ds_name}_dataset")
+    problem_path = Path(dataset_path, f"{ds_name}_problem")
+    cand_path = Path(dataset_path, f"{ds_name}_candidates")
+    return seed_path,problem_path, cand_path
+
+
+def get_unique_keys(left_table, left_on):
+    uk = find_unique_keys(left_table, left_on)
+    if uk is not None:
+        return len(uk)
+    else:
+        return None
+
 
 def find_unique_keys(df, key_cols, engine="polars"):
+    """Find the set of unique keys given a combination of columns. 
+    
+    This function is used to find what is the potential cardinality of a join key.
+
+    Args:
+        df (Union[pd.DataFrame, pl.DataFrame]): Dataframe to estimate key cardinality on.
+        key_cols (list): List of key columns.
+        engine (str, optional): Either `polars` or `pandas`, the engine to be used. Defaults to "polars".
+
+    Raises:
+        ValueError: Raised if the engine is different from either `pandas` or `polars`.
+
+    Returns:
+        _type_: List of unique keys.
+    """
     if engine == "pandas":
-        unique_keys = find_unique_keys_pandas(df, key_cols)
+        unique_keys = df[key_cols].groupby(key_cols).size()
     elif engine == "polars":
         try:
-            unique_keys = find_unique_keys_polars(df, key_cols)
+            unique_keys = df.select(pl.col(key_cols)).groupby(key_cols).count()
         except pl.DuplicateError:
             unique_keys = None
     else:
@@ -49,6 +82,18 @@ def prepare_base_dict_info():
 
 
 def read_table(table_path, engine="polars"):
+    """Read a single table using different either polars or pandas as dataframe engine.
+
+    Args:
+        table_path (Path): Path to the table to be loaded
+        engine (str, optional): DataFrame engine to be used, either `polars` or `pandas`. Defaults to "polars".
+
+    Raises:
+        ValueError: The provided engine is unknown.
+
+    Returns:
+        _type_: Dataframe read according to the required engine. 
+    """
     if engine == "polars":
         return pl.read_csv(table_path, infer_schema_length=0)
     elif engine == "pandas":
@@ -57,41 +102,67 @@ def read_table(table_path, engine="polars"):
         raise ValueError(f"Unknown engine {engine}")
     
 
-def merge_table(left_table, right_table, left_on, right_on, engine):
+def merge_table(left_table: Union[pd.DataFrame, pl.DataFrame], 
+                right_table: Union[pd.DataFrame, pl.DataFrame], 
+                left_on: list, right_on: list, 
+                engine: str ="polars", 
+                how: str ="left"):
+    """Merge tables according to the specified engine. 
+
+    Args:
+        left_table (Union[pd.DataFrame, pl.DataFrame]): Left table to be joined.
+        right_table (Union[pd.DataFrame, pl.DataFrame]): Right table to be joined.
+        left_on (list): Join keys in the left table.
+        right_on (list): Join keys in the right table.
+        engine (str, optional): Engine to be used. Defaults to "polars".
+        how (str, optional): Join type. Defaults to "left".
+
+    Raises:
+        ValueError: Raises ValueError if the engine provided is not in [`polars`, `pandas`].
+
+    Returns:
+        Union[pd.DataFrame, pl.DataFrame]: Merged table.
+    """
     if engine == "polars":
         merged = left_table[left_on].join(
         right_table[right_on], left_on=left_on, 
-        right_on=right_on, how="left")
+        right_on=right_on, how=how)
         return merged
     elif engine == "pandas":
         merged = left_table[left_on].merge(
         right_table[right_on], left_on=left_on, 
-        right_on=right_on, how="left")
+        right_on=right_on, how=how)
         return merged
     else:
         raise ValueError(f"Unknown engine {engine}")    
 
-def get_unique_keys(left_table, left_on):
-    uk = find_unique_keys(left_table, left_on)
-    if uk is not None:
-        return len(uk)
-    else:
-        return None
 
-def profile_dataset(dataset_path: Path, engine="polars", verbose=False):
+def profile_dataset(dataset_path: Path, engine="polars", verbose=0):
+    """This function takes as input the path to a csv file, reads it using either 
+    polars or pands, then runs a series of profiling operation to study the 
+    join candidates provided by Auctus. 
+    
+    It notes down `ds_name`, `candidate_name`, `left_on`, `right_on`, size of the
+    left join in `merged_rows`, `scale_factor`, cardinality of left and right 
+    key columns in `left_unique_keys` and `right_unique_keys`. 
+
+    Args:
+        dataset_path (Path): Path to the dataset (assumes d3m+auctus format.)
+        engine (str, optional): DataFrame engine to be used, either `polars` or `pandas`. Defaults to "polars".
+        verbose (int, optional): How much information on dataset failures to be printed. Defaults to 0.
+
+    Returns:
+        pd.DataFrame: Summary of the statistics in DataFrame format.
+    """
     ds_name = dataset_path.stem
 
-    seed_path = Path(dataset_path, f"{ds_name}_dataset")
-    problem_path = Path(dataset_path, f"{ds_name}_problem")
-    cand_path = Path(dataset_path, f"{ds_name}_candidates")
+    seed_path, problem_path, cand_path = get_base_paths(dataset_path, ds_name)
     
-    path_left = Path(seed_path, "tables/learningData.csv")
-    assert path_left.exists()
-    left_table = read_table(path_left, engine)
-    
-    
+    left_table_path = Path(seed_path, "tables/learningData.csv")
+
     metadata_path = Path(cand_path, "queryResults.json")
-    if metadata_path.exists():
+    if metadata_path.exists() and left_table_path.exists():
+        left_table = read_table(left_table_path, engine)
         metadata = json.load(open(metadata_path))
         all_info_dict = {}
         idx_info = 0
@@ -103,7 +174,7 @@ def profile_dataset(dataset_path: Path, engine="polars", verbose=False):
             base_dict_info["ds_name"] = ds_name
             base_dict_info["candidate_name"] = cand_id
             if not right_table_path.exists():
-                if verbose:
+                if verbose>0:
                     print(f"{right_table_path} not found.")
                 dict_info = dict(base_dict_info)
                 all_info_dict[idx_info] = dict_info
@@ -115,8 +186,11 @@ def profile_dataset(dataset_path: Path, engine="polars", verbose=False):
                     right_on = join_cand["right_columns_names"][0]
                     dict_info = dict(base_dict_info)
                     if len(right_on) != len(left_on):
-                        if verbose:
+                        if verbose>1:
                             print(f"Left: {left_on} != Right: {right_on}")
+                    elif any(r not in right_table.columns for r in right_on) or any(l not in left_table.columns for l in left_on):
+                        if verbose>0:
+                            print(f"Not all columns found.")
                     else:
                         dict_info["left_rows"], dict_info["left_cols"] = left_table.shape
                         
@@ -141,3 +215,4 @@ def profile_dataset(dataset_path: Path, engine="polars", verbose=False):
     else:
         df_info = pd.DataFrame()
     return df_info
+
