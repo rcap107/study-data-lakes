@@ -1,0 +1,128 @@
+ds_name,candidate_name,left_on,right_on,merged_rows,scale_factor,left_unique_keys,right_unique_keys,left_rows,left_cols
+299_libras_move_MIN_METADATA,datamart.socrata.data-edmonton-ca.mnwt-r49h,,,,,,,,
+299_libras_move_MIN_METADATA,datamart.url.e8ad58ccedbd437b96f4a36de3f4f8a7,"['ycoord1', 'xcoord1']","['Lat', 'Long']",360.0,1.0,328.0,285.0,360.0,92.0
+299_libras_move_MIN_METADATA,datamart.url.e8ad58ccedbd437b96f4a36de3f4f8a7,,,,,,,,
+299_libras_move_MIN_METADATA,datamart.socrata.data-pr-gov.qzxu-awbt,,,,,,,,
+299_libras_move_MIN_METADATA,datamart.zenodo.4464734.5aa81844-52b9-4202-b776-63972d72a38f,,,,,,,,
+299_libras_move_MIN_METADATA,datamart.url.1d504fcd3583477ca48754df4dda557d,,,,,,,,
+299_libras_move_MIN_METADATA,datamart.socrata.data-usaid-gov.dv4q-6ewh,,,,,,,,
+299_libras_move_MIN_METADATA,datamart.upload.ce30d9ff6ef9431cb147d2f439ef5851,,,,,,,,
+299_libras_move_MIN_METADATA,datamart.socrata.finances-worldbank-org.h9ga-h5eb,,,,,,,,
+299_libras_move_MIN_METADATA,datamart.zenodo.4539697.64d2814f-85e3-4b3b-b8f9-578eec2ea23f,,,,,,,,
+299_libras_move_MIN_METADATA,datamart.zenodo.4673576.7e18db9d-a2b5-40a5-ac45-48ca996b263b,,,,,,,,
+299_libras_move_MIN_METADATA,datamart.zenodo.5044247.34454028-f296-4328-8b51-87f1b42795c0,"['ycoord1', 'xcoord1']","['decimalLatitude_gbifP', 'decimalLongitude_gbifP']",360.0,1.0,328.0,4729.0,360.0,92.0
+299_libras_move_MIN_METADATA,datamart.zenodo.5044247.34454028-f296-4328-8b51-87f1b42795c0,"['ycoord1', 'xcoord1']","['decimalLatitude_gbifR', 'decimalLongitude_gbifR']",360.0,1.0,328.0,4723.0,360.0,92.0
+299_libras_move_MIN_METADATA,datamart.zenodo.5044247.34454028-f296-4328-8b51-87f1b42795c0,"['ycoord1', 'xcoord1']","['decimalLatitude_idbP', 'decimalLongitude_idbP']",360.0,1.0,328.0,3385.0,360.0,92.0
+299_libras_move_MIN_METADATA,datamart.zenodo.5044247.34454028-f296-4328-8b51-87f1b42795c0,"['ycoord1', 'xcoord1']","['decimalLatitude_idbR', 'decimalLongitude_idbR']",360.0,1.0,328.0,3418.0,360.0,92.0
+299_libras_move_MIN_METADATA,datamart.zenodo.5044247.34454028-f296-4328-8b51-87f1b42795c0,,,,,,,,
+299_libras_move_MIN_METADATA,datamart.zenodo.5044247.34454028-f296-4328-8b51-87f1b42795c0,,,,,,,,
+299_libras_move_MIN_METADATA,datamart.zenodo.5044247.34454028-f296-4328-8b51-87f1b42795c0,,,,,,,,
+299_libras_move_MIN_METADATA,datamart.zenodo.5044247.34454028-f296-4328-8b51-87f1b42795c0,,,,,,,,
+299_libras_move_MIN_METADATA,datamart.zenodo.5044247.34454028-f296-4328-8b51-87f1b42795c0,,,,,,,,
+LL0_1547_autouniv_au1_1000,datamart.socrata.data-usaid-gov.37b9-jpny,['V10'],['q10'],1000.0,1.0,2.0,12.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.data-usaid-gov.w94p-jdix,['V10'],['q10'],1000.0,1.0,2.0,12.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.data-usaid-gov.37ab-vauh,['V10'],['q10'],1000.0,1.0,2.0,12.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.data-usaid-gov.m6yn-kw7d,['V10'],['q10'],1000.0,1.0,2.0,12.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.data-usaid-gov.grkm-nim6,['V10'],['q10'],1000.0,1.0,2.0,12.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.data-usaid-gov.r6jt-zyyf,['V10'],['q10'],1000.0,1.0,2.0,12.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.data-medicaid-gov.dc57-m2ei,,,,,,,,
+LL0_1547_autouniv_au1_1000,datamart.socrata.data-usaid-gov.b53t-ppa4,['V10'],['q10'],1000.0,1.0,2.0,12.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.data-usaid-gov.yn5p-z73k,['V10'],['q10'],1000.0,1.0,2.0,12.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.data-usaid-gov.96yq-tiyw,['V10'],['q10'],1000.0,1.0,2.0,12.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.data-usaid-gov.7d3u-8vir,['V10'],['q10'],1000.0,1.0,2.0,12.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.data-usaid-gov.pydg-yd33,['V10'],['q10'],1000.0,1.0,2.0,12.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.data-usaid-gov.ah2w-363x,['V10'],['q10'],1000.0,1.0,2.0,5.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.opendata-utah-gov.p2zw-xeay,['V10'],['B10'],1000.0,1.0,2.0,14.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.opendata-utah-gov.p2zw-xeay,['V10'],['C10'],1000.0,1.0,2.0,69.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.opendata-utah-gov.p2zw-xeay,['V10'],['V40'],1000.0,1.0,2.0,119.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.opendata-utah-gov.p2zw-xeay,['V10'],['V90'],1000.0,1.0,2.0,97.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.opendata-utah-gov.p2zw-xeay,['V10'],['V60'],1000.0,1.0,2.0,27.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.opendata-utah-gov.p2zw-xeay,['V10'],['V70'],1000.0,1.0,2.0,40.0,1000.0,22.0
+LL0_1547_autouniv_au1_1000,datamart.socrata.opendata-utah-gov.p2zw-xeay,['V10'],['V80'],1000.0,1.0,2.0,40.0,1000.0,22.0
+LL0_200_pbc,datamart.socrata.opendata-utah-gov.p2zw-xeay,['Z11'],['B11'],418.0,1.0,159.0,33.0,418.0,20.0
+LL0_200_pbc,datamart.socrata.opendata-utah-gov.p2zw-xeay,['Z11'],['C11'],418.0,1.0,159.0,20.0,418.0,20.0
+LL0_200_pbc,datamart.socrata.opendata-utah-gov.p2zw-xeay,['Z11'],['D11'],418.0,1.0,159.0,29.0,418.0,20.0
+LL0_200_pbc,datamart.socrata.opendata-utah-gov.p2zw-xeay,['Z11'],['A11'],418.0,1.0,159.0,19.0,418.0,20.0
+LL0_200_pbc,datamart.socrata.opendata-utah-gov.p2zw-xeay,['Z11'],['E11'],418.0,1.0,159.0,94.0,418.0,20.0
+LL0_200_pbc,datamart.socrata.opendata-utah-gov.p2zw-xeay,['Z11'],['Q11'],418.0,1.0,159.0,29.0,418.0,20.0
+LL0_200_pbc,datamart.socrata.opendata-utah-gov.p2zw-xeay,['Z11'],['V11'],418.0,1.0,159.0,86.0,418.0,20.0
+LL0_200_pbc,datamart.socrata.opendata-utah-gov.p2zw-xeay,['Z14'],['C14'],418.0,1.0,147.0,75.0,418.0,20.0
+LL0_200_pbc,datamart.socrata.opendata-utah-gov.p2zw-xeay,['Z14'],['Z34'],418.0,1.0,147.0,119.0,418.0,20.0
+LL0_200_pbc,datamart.socrata.opendata-utah-gov.p2zw-xeay,['Z14'],['V14'],418.0,1.0,147.0,64.0,418.0,20.0
+LL0_200_pbc,datamart.socrata.opendata-utah-gov.p2zw-xeay,['Z15'],['C15'],418.0,1.0,244.0,99.0,418.0,20.0
+LL0_200_pbc,datamart.socrata.opendata-utah-gov.p2zw-xeay,['Z15'],['G15'],418.0,1.0,244.0,52.0,418.0,20.0
+LL0_200_pbc,datamart.socrata.opendata-utah-gov.p2zw-xeay,['Z15'],['Z35'],418.0,1.0,244.0,120.0,418.0,20.0
+LL0_200_pbc,datamart.socrata.opendata-utah-gov.p2zw-xeay,['Z15'],['V15'],418.0,1.0,244.0,60.0,418.0,20.0
+LL0_200_pbc,datamart.zenodo.6621762.d796fb0d-4582-448b-8f5d-1974c63e24ac,['Z14'],['S14'],418.0,1.0,147.0,238.0,418.0,20.0
+LL0_200_pbc,datamart.zenodo.6621762.d796fb0d-4582-448b-8f5d-1974c63e24ac,['Z15'],['S15'],418.0,1.0,244.0,237.0,418.0,20.0
+LL0_200_pbc,datamart.zenodo.6974483.3d9901cd-8a55-48ee-b2fe-1750472beb09,['Z14'],['p14'],161442.0,386.2248803827751,147.0,80.0,418.0,20.0
+LL0_200_pbc,datamart.socrata.data-usaid-gov.mm3i-pcnd,['Z17'],['b17'],93585.0,223.88755980861245,5.0,8.0,418.0,20.0
+LL0_200_pbc,datamart.socrata.data-usaid-gov.ibtf-2a34,['Z17'],['b17'],70992.0,169.83732057416267,5.0,8.0,418.0,20.0
+LL0_200_pbc,datamart.socrata.data-usaid-gov.4gye-9wpi,['Z17'],['q17'],3960.0,9.473684210526315,5.0,17.0,418.0,20.0
+LL1_736_population_spawn_MIN_METADATA,datamart.socrata.www-data-act-gov-au.c5h9-9bh7,['day'],['daly'],614041.0,20.29350915460374,320.0,4318.0,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.socrata.opendata-maryland-gov.t7ek-pn7n,['count'],['Count'],30258.0,1.0,,1062.0,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.socrata.data-ct-gov.ybkg-w5x2,['count'],['Count'],30344.0,1.0028422235441867,,239.0,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.zenodo.4243547.ece93f17-c7b0-48a2-b054-00264abc3aa5,['day'],['Day'],929658.0,30.724370414435853,320.0,305.0,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.socrata.www-data-act-gov-au.65z9-5mfa,['day'],['daly'],102992.0,3.4037940379403793,320.0,549.0,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.socrata.www-data-act-gov-au.wpfn-nze5,,,,,,,,
+LL1_736_population_spawn_MIN_METADATA,datamart.socrata.health-data-ny-gov.gnvg-m62r,['count'],['Count'],30517.0,1.008559719743539,,4691.0,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.socrata.data-pa-gov.5whq-ymtz,['count'],['Count'],30258.0,1.0,,200.0,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.zenodo.5021480.5d408669-ff25-4740-bee3-ba9fb5a4a489,['day'],['day'],30258.0,1.0,320.0,288.0,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.zenodo.6621762.6876a8dd-25e0-4c4b-9188-5a3ae1659aac,['day'],['day'],1879351.0,62.11087976733426,320.0,295.0,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.zenodo.5142676.979356df-53c5-4842-8247-e949d6331755,['count'],['count'],422025.0,13.947551060876462,,,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.zenodo.5021480.47623c54-e1a8-4716-b809-f3d6e6db8633,['day'],['day'],34893.0,1.1531826293872696,320.0,238.0,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.socrata.data-ct-gov.4z97-pa4q,['count'],['Count'],32597.0,1.0773018705796813,,13695.0,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.socrata.data-pa-gov.dzyb-si4q,['count'],['Count'],30258.0,1.0,,204.0,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.zenodo.4151380.77e922d7-bfe3-4e04-88d0-c680efeb3bb5,['count'],['Count'],30258.0,1.0,,48.0,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.zenodo.5021480.a138ed50-e5df-4e05-b328-398bc951d4c0,['day'],['day'],30258.0,1.0,320.0,162.0,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.zenodo.5021480.7dc1a890-b744-41fd-a56f-a771e3b6f65b,['day'],['day'],30258.0,1.0,320.0,162.0,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.socrata.data-ny-gov.6amx-2pbv,['count'],['Count'],368959.0,12.193766937669377,,34444.0,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.socrata.data-edmonton-ca.x5vj-du6p,['count'],['Count'],30258.0,1.0,,7.0,30258.0,5.0
+LL1_736_population_spawn_MIN_METADATA,datamart.socrata.opendata-utah-gov.7iu3-rv9s,['day'],['May'],30741.0,1.015962720602816,320.0,47.0,30258.0,5.0
+LL1_gasoline_incl_aviation_production_industry,datamart.socrata.opendata-utah-gov.nbv6-7v56,['time'],['Time'],82006.0,569.4861111111111,144.0,1757.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.socrata.opendata-maryland-gov.x7h2-rnih,['time'],['Time'],198.0,1.375,144.0,415.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.url.e8ad58ccedbd437b96f4a36de3f4f8a7,['value'],['value'],144.0,1.0,131.0,116325.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.socrata.opendata-utah-gov.xfh9-fxc8,['value'],['value'],144.0,1.0,131.0,209.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.socrata.opendata-utah-gov.agzy-h74p,['value'],['value'],144.0,1.0,131.0,619.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.socrata.opendata-utah-gov.hn5w-8f9m,['value'],['value'],144.0,1.0,131.0,188.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.zenodo.3886437.221ed671-2af0-41f2-a0e8-54aee524cdb3,['value'],['value'],144.0,1.0,131.0,5053.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.zenodo.5167597.6f0b3bc9-d8d0-4ce4-8bf6-c09593294a4b,['value'],['value'],144.0,1.0,131.0,64439.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.socrata.opendata-utah-gov.aydb-t32c,['value'],['value'],144.0,1.0,131.0,127.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.zenodo.5167597.005a127a-cfee-49d9-beca-917c5d4e4ab6,['value'],['value'],144.0,1.0,131.0,44615.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.socrata.opendata-utah-gov.8btp-tdfc,['value'],['value'],144.0,1.0,131.0,304.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.socrata.opendata-utah-gov.26sv-5dyv,['value'],['value'],144.0,1.0,131.0,115.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.zenodo.5167597.a4e7791b-908c-4264-b892-4708108fc50d,['value'],['value'],144.0,1.0,131.0,55137.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.socrata.opendata-utah-gov.xwxs-a44v,['value'],['value'],144.0,1.0,131.0,470.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.socrata.data-bayareametro-gov.grqz-amra,['value'],['Value'],144.0,1.0,131.0,8789.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.zenodo.3886437.598030f4-3e56-4363-ae20-96c399b8f2a4,['value'],['value'],144.0,1.0,131.0,3906.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.socrata.opendata-fcc-gov.g8i9-br5r,['value'],['value'],144.0,1.0,131.0,1696.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.socrata.data-bayareametro-gov.bijg-2bez,['value'],['Value'],144.0,1.0,131.0,12651.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.url.2698d783449c540090e114c5eb303fe7,['value'],['value'],144.0,1.0,131.0,44630.0,144.0,3.0
+LL1_gasoline_incl_aviation_production_industry,datamart.url.2c01b1f81d655c85a55e5dfeb2f6d9f8,['value'],['value'],144.0,1.0,131.0,116325.0,144.0,3.0
+LL1_sentiment_self_drive,datamart.socrata.opendata-utah-gov.nkqn-sttt,['tweets'],['case_number'],7156.0,1.0,7146.0,15000.0,7156.0,3.0
+LL1_sentiment_self_drive,datamart.zenodo.4898818.2540e8f1-fb3d-4be0-8a3d-001f118f3aed,['sentiment'],['Sentimenti'],103560.0,14.471771939631079,6.0,4.0,7156.0,3.0
+LL1_sentiment_self_drive,datamart.upload.51f8be1b95504bc5b9d333209f6521ac,['tweets'],['popularity_by_hour'],7156.0,1.0,7146.0,220630.0,7156.0,3.0
+LL1_sentiment_self_drive,datamart.url.b506c035e4195262aabc94926ab16602,['tweets'],['popularity_by_hour'],7156.0,1.0,7146.0,220630.0,7156.0,3.0
+LL1_sentiment_self_drive,datamart.socrata.mydata-iowa-gov.y3id-d73d,['tweets'],['Vendor Name'],7156.0,1.0,7146.0,164172.0,7156.0,3.0
+LL1_sentiment_self_drive,datamart.socrata.data-sfgov-org.beah-shgi,['tweets'],['property_address'],7156.0,1.0,7146.0,4936.0,7156.0,3.0
+LL1_sentiment_self_drive,datamart.socrata.data-edmonton-ca.i6bp-2q3s,['tweets'],['Row ID'],7156.0,1.0,7146.0,2033470.0,7156.0,3.0
+political_instability_MIN_METADATA,datamart.socrata.data-usaid-gov.v799-4hug,['partaut'],['partact'],153041.0,26.541970169961846,3.0,7.0,5766.0,34.0
+political_instability_MIN_METADATA,datamart.socrata.data-usaid-gov.75qt-x4hk,['partaut'],['partact'],258046.0,44.753035032951786,3.0,7.0,5766.0,34.0
+political_instability_MIN_METADATA,datamart.socrata.data-usaid-gov.r3z6-2jv8,['partaut'],['partact'],2437076.0,422.66319805757894,3.0,7.0,5766.0,34.0
+political_instability_MIN_METADATA,datamart.socrata.www-dallasopendata-com.6wfz-rcuc,['year'],['job_address'],5766.0,1.0,30.0,777.0,5766.0,34.0
+political_instability_MIN_METADATA,datamart.socrata.opendata-utah-gov.3pz4-jq2q,['year'],['Year'],5766.0,1.0,30.0,148.0,5766.0,34.0
+political_instability_MIN_METADATA,datamart.socrata.opendata-utah-gov.ez64-g6kd,['year'],['Flight Number'],5766.0,1.0,30.0,685.0,5766.0,34.0
+political_instability_MIN_METADATA,datamart.socrata.opendata-maryland-gov.sk8g-4e43,['year'],['Year'],5766.0,1.0,30.0,127.0,5766.0,34.0
+political_instability_MIN_METADATA,datamart.socrata.opendata-utah-gov.i3p4-g4h4,['year'],['PO Box'],5766.0,1.0,30.0,98.0,5766.0,34.0
+political_instability_MIN_METADATA,datamart.socrata.data-cityofnewyork-us.8a4n-zmpj,['year'],['Artwork Year'],5766.0,1.0,30.0,130.0,5766.0,34.0
+political_instability_MIN_METADATA,datamart.socrata.data-sfgov-org.ckai-dve4,['year'],['Q18ZIP'],5766.0,1.0,30.0,89.0,5766.0,34.0
+political_instability_MIN_METADATA,datamart.socrata.data-ny-gov.psym-z9ae,['year'],['Year'],59297.0,10.283905653832813,30.0,165.0,5766.0,34.0
+political_instability_MIN_METADATA,datamart.socrata.data-bayareametro-gov.nbhf-veac,['year'],['LatestDocumentDate'],5766.0,1.0,30.0,14560.0,5766.0,34.0
+political_instability_MIN_METADATA,datamart.socrata.data-colorado-gov.x5a5-6sqv,['year'],['Priority Date'],5766.0,1.0,30.0,48.0,5766.0,34.0
+political_instability_MIN_METADATA,datamart.socrata.data-colorado-gov.hzps-q7a4,['year'],['INFOR_ASSE'],5766.0,1.0,30.0,149.0,5766.0,34.0
+political_instability_MIN_METADATA,datamart.socrata.finances-worldbank-org.sfv5-tf7p,['year'],['Last Repayment Date'],5766.0,1.0,30.0,1684.0,5766.0,34.0
+political_instability_MIN_METADATA,datamart.socrata.data-colorado-gov.u9u9-cq2s,['year'],['BOCC_DATE'],5766.0,1.0,30.0,265.0,5766.0,34.0
+political_instability_MIN_METADATA,datamart.socrata.datahub-transportation-gov.niaw-6xw6,['year'],['Year'],69192.0,12.0,30.0,50.0,5766.0,34.0
+political_instability_MIN_METADATA,datamart.socrata.opendata-utah-gov.ufku-4tqa,,,,,,,,
+political_instability_MIN_METADATA,datamart.socrata.data-edmonton-ca.tnqb-twnn,,,,,,,,
+political_instability_MIN_METADATA,datamart.socrata.data-ny-gov.rikd-mt35,,,,,,,,

@@ -1,4 +1,5 @@
-"""This script is used to run the profiling operation on all datasets in the 
+"""d3m+auctus
+This script is used to run the profiling operation on all datasets in the 
 given data_folder with an engine passed as argument. 
 """
 
