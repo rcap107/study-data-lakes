@@ -1,18 +1,9 @@
 import pandas as pd
 import polars as pl
 from pathlib import Path
-import timeit
 import json
 from typing import Union
-
-def read_df_pl(df_path: Path):
-    return pl.read_csv(df_path)
-
-def read_df_pd(df_path: Path):
-    return pd.read_csv(df_path)
-
-def read_df_pl_to_pd(df_path: Path):
-    return pl.read_csv(df_path).to_pandas()
+from src.utils import read_table_csv
 
 def get_base_paths(dataset_path: Path, ds_name: str):
     """Given the dataset path and the dataset name, generate the required paths
@@ -79,27 +70,6 @@ def prepare_base_dict_info():
         "right_unique_keys": None
     }
     return d_info
-
-
-def read_table(table_path, engine="polars"):
-    """Read a single table using different either polars or pandas as dataframe engine.
-
-    Args:
-        table_path (Path): Path to the table to be loaded
-        engine (str, optional): DataFrame engine to be used, either `polars` or `pandas`. Defaults to "polars".
-
-    Raises:
-        ValueError: The provided engine is unknown.
-
-    Returns:
-        _type_: Dataframe read according to the required engine. 
-    """
-    if engine == "polars":
-        return pl.read_csv(table_path, infer_schema_length=0)
-    elif engine == "pandas":
-        return pd.read_csv(table_path, low_memory=False).astype(str)
-    else:
-        raise ValueError(f"Unknown engine {engine}")
     
 
 def merge_table(left_table: Union[pd.DataFrame, pl.DataFrame], 
@@ -123,18 +93,18 @@ def merge_table(left_table: Union[pd.DataFrame, pl.DataFrame],
     Returns:
         Union[pd.DataFrame, pl.DataFrame]: Merged table.
     """
-    if engine == "polars":
-        merged = left_table[left_on].join(
+    if (type(left_table) == pl.DataFrame) and (type(right_table) == pl.DataFrame):
+        merged = left_table[left_on].lazy().join(
         right_table[right_on], left_on=left_on, 
         right_on=right_on, how=how)
-        return merged
-    elif engine == "pandas":
+        return merged.collect()
+    elif (type(left_table) == pd.DataFrame) and (type(right_table) == pd.DataFrame):
         merged = left_table[left_on].merge(
         right_table[right_on], left_on=left_on, 
         right_on=right_on, how=how)
         return merged
     else:
-        raise ValueError(f"Unknown engine {engine}")    
+        raise TypeError(f"Incorrect dataframe type.")    
 
 
 def profile_dataset(dataset_path: Path, engine="polars", verbose=0):
@@ -162,7 +132,7 @@ def profile_dataset(dataset_path: Path, engine="polars", verbose=0):
 
     metadata_path = Path(cand_path, "queryResults.json")
     if metadata_path.exists() and left_table_path.exists():
-        left_table = read_table(left_table_path, engine)
+        left_table = read_table_csv(left_table_path, engine)
         metadata = json.load(open(metadata_path))
         all_info_dict = {}
         idx_info = 0
@@ -180,7 +150,7 @@ def profile_dataset(dataset_path: Path, engine="polars", verbose=0):
                 all_info_dict[idx_info] = dict_info
                 idx_info += 1
             else:
-                right_table = read_table(right_table_path, engine)
+                right_table = read_table_csv(right_table_path, engine)
                 for join_cand in cand_info["metadata"]:
                     left_on = join_cand["left_columns_names"][0]
                     right_on = join_cand["right_columns_names"][0]
