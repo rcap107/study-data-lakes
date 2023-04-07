@@ -65,3 +65,101 @@ def profile_dataframe(df: Union[pd.DataFrame, pl.DataFrame]):
         return profile_polars(df)
     else:
         raise TypeError(f"Table {df} has inappropriate type {type(df)}")
+
+@pl.api.register_expr_namespace("old_profiling")
+class ProfilingOperations:
+    """From https://stackoverflow.com/a/75892816/3741342
+    """
+    def __init__(self, expr: pl.Expr) -> None:
+        self._expr = expr
+        
+    def n_unique(self):
+        return self._expr.n_unique().suffix("___count_unique")
+    
+    def null_count(self):
+        return self._expr.null_count().suffix("___count_nans")
+    
+    def nan_frac(self):
+        return (self._expr.null_count()/self._expr.count()).suffix("___nan_frac")
+
+    def count(self):
+        return self._expr.count().suffix("___count")
+    
+
+@pl.api.register_expr_namespace("profiling")
+class Profiling:
+    """From https://stackoverflow.com/a/75892816/3741342
+    """
+    def __init__(self, expr):
+        self._expr = expr
+    def n_unique(self):
+        return pl.struct(
+            [
+                pl.lit("count_unique").alias("stat"), 
+                self._expr.n_unique().cast(pl.Float64())
+            ]
+        )
+    def null_count(self):
+        return pl.struct(
+            [
+                pl.lit("count_nans").alias("stat"), 
+                self._expr.null_count().cast(pl.Float64())
+            ]
+        )
+    def nan_frac(self):
+        return pl.struct(
+            [
+                pl.lit("nan_frac").alias("stat"), 
+                (self._expr.null_count()/self._expr.count()).cast(pl.Float64())
+            ]
+        )
+
+    def count(self):
+        return pl.struct(
+            [
+                pl.lit("count").alias("stat"), 
+                (self._expr.count()).cast(pl.Float64())
+            ]
+        )
+
+def profile_with_col_ops_v1(df: pl.DataFrame):
+    q=(df.lazy().select(
+        getattr(
+            pl.all().old_profiling, x
+        )() for x in dir(pl.Expr.old_profiling) if x[:1]!="_"
+    ).melt().with_columns(
+        varsplit=pl.col("variable").str.split("___")
+    ).with_columns(
+        c1=pl.col("varsplit").arr.first(),
+        c2=pl.col("varsplit").arr.last()
+    ).collect().pivot("value", "c2", "c1"))
+
+    return q.to_pandas()
+
+def profile_with_col_ops(df: pl.DataFrame):
+    df = df.lazy()
+    q = (pl.concat(
+        [
+            df.select(
+                getattr(pl.all().profiling, stat_method)()
+            ).unnest('stat') 
+            for stat_method in dir(pl.Expr.profiling) 
+            if stat_method[:1]!="_"
+        ]
+    ).collect())
+    return q.to_pandas()
+
+def profile_with_col_ops_v2(df: pl.DataFrame):
+    q=df.lazy().select(
+        getattr(
+            pl.all().old_profiling, x
+        )() for x in dir(pl.Expr.old_profiling) if x[:1]!="_"
+    ).melt().with_columns(
+        varsplit=pl.col("variable").str.split("___")
+    ).with_columns(
+        c1=pl.col("varsplit").arr.first(),
+        c2=pl.col("varsplit").arr.last()
+    ).collect()
+
+    return q
+
