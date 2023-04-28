@@ -13,7 +13,7 @@ from datetime import datetime as dt
 
 def study_one_dataset(idx: int, tgt_folder: str, df_name: str, group_name: str):
     info_dict = {"group_name": group_name, "name": df_name}
-    try:
+    try:        
         file_path = osp.join(tgt_folder, df_name)
         table = pq.read_table(file_path)
         md = table.schema.metadata[b"gittables"]

@@ -7,7 +7,7 @@ import pandas as pd
 import polars as pl
 import json
 from pathlib import Path
-from src.utils import profile_dataset
+from src.auctus.utils import profile_dataset
 from tqdm import tqdm
 import sys
 
